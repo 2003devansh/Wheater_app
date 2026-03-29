@@ -19,6 +19,7 @@ export type WeatherResponse = {
   daily: DailyWeather;
 };
 
+// Normalized type (important)
 export type WeatherData = {
   hourly: {
     time: string[];
