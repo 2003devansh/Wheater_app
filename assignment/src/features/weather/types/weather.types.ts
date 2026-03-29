@@ -5,6 +5,8 @@ export type HourlyWeather = {
   precipitation: number[];
   visibility: number[];
   windspeed_10m: number[];
+  uv_index: number[];
+  precipitation_probability: number[];
 };
 
 export type DailyWeather = {
@@ -12,6 +14,7 @@ export type DailyWeather = {
   temperature_2m_min: number[];
   sunrise: string[];
   sunset: string[];
+  windspeed_10m_max: number[];
 };
 
 export type WeatherResponse = {
@@ -19,7 +22,6 @@ export type WeatherResponse = {
   daily: DailyWeather;
 };
 
-// Normalized type (important)
 export type WeatherData = {
   hourly: {
     time: string[];
@@ -28,11 +30,14 @@ export type WeatherData = {
     precipitation: number[];
     visibility: number[];
     windSpeed: number[];
+    uvIndex: number[];
+    precipitationProbability: number[];
   };
   daily: {
     tempMax: number;
     tempMin: number;
     sunrise: string;
     sunset: string;
+    windMax: number;
   };
 };

@@ -12,9 +12,19 @@ export const useGeolocation = () => {
           lon: pos.coords.longitude,
         });
       },
-      () => {
-        console.error("Failed to get geolocation", coordinates);
+      (err) => {
+        console.error("Failed to get geolocation", err);
+
+        // Note the water : these are hardcoded value
+        setCoordinates({
+          lat: 28.6139,
+          lon: 77.209,
+        });
       },
     );
   }, []);
+
+  //   console.log("Current coordinates:", coordinates);
+
+  return coordinates;
 };

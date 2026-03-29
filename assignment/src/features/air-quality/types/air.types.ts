@@ -6,9 +6,9 @@ export type AirQualityResponse = {
     carbon_monoxide: number[];
     nitrogen_dioxide: number[];
     sulphur_dioxide: number[];
+    european_aqi: number[];
   };
 };
-
 export type AirQualityData = {
   time: string[];
   pm10: number[];
@@ -16,4 +16,5 @@ export type AirQualityData = {
   co: number[];
   no2: number[];
   so2: number[];
+  aqi: number[];
 };

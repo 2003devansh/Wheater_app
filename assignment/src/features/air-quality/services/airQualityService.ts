@@ -5,10 +5,7 @@ export const fetchAirQuality = async (
   lat: number,
   lon: number,
 ): Promise<AirQualityData> => {
-  const url = `https://air-quality-api.open-meteo.com/v1/air-quality
-    ?latitude=${lat}
-    &longitude=${lon}
-    &hourly=pm10,pm2_5,carbon_monoxide,nitrogen_dioxide,sulphur_dioxide`;
+  const url = `https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${lat}&longitude=${lon}&hourly=pm10,pm2_5,carbon_monoxide,nitrogen_dioxide,sulphur_dioxide,european_aqi`;
 
   const data = await fetchJson<AirQualityResponse>(url);
 
@@ -19,5 +16,6 @@ export const fetchAirQuality = async (
     co: data.hourly.carbon_monoxide,
     no2: data.hourly.nitrogen_dioxide,
     so2: data.hourly.sulphur_dioxide,
+    aqi: data.hourly.european_aqi,
   };
 };
