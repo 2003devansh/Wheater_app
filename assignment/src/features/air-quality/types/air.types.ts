@@ -7,6 +7,7 @@ export type AirQualityResponse = {
     nitrogen_dioxide: number[];
     sulphur_dioxide: number[];
     european_aqi: number[];
+    carbon_dioxide: number[];
   };
 };
 export type AirQualityData = {
@@ -17,4 +18,5 @@ export type AirQualityData = {
   no2: number[];
   so2: number[];
   aqi: number[];
+  co2: number[];
 };

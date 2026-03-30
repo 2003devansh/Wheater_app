@@ -10,7 +10,7 @@ export const fetchHistorical = async (
   start: string,
   end: string,
 ): Promise<HistoricalData> => {
-  const url = `https://archive-api.open-meteo.com/v1/archive?latitude=${lat}&longitude=${lon}&start_date=${start}&end_date=${end}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,windspeed_10m_max&timezone=auto`;
+  const url = `https://archive-api.open-meteo.com/v1/archive?latitude=${lat}&longitude=${lon}&start_date=${start}&end_date=${end}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,windspeed_10m_max,winddirection_10m_dominant,sunrise,sunset&timezone=Asia/Kolkata`;
 
   const data = await fetchJson<HistoricalResponse>(url);
   return {
@@ -19,5 +19,8 @@ export const fetchHistorical = async (
     tempMin: data.daily.temperature_2m_min,
     precipitation: data.daily.precipitation_sum,
     windSpeed: data.daily.windspeed_10m_max,
+    sunrise: data.daily.sunrise,
+    sunset: data.daily.sunset,
+    windDirection: data.daily.winddirection_10m_dominant,
   };
 };

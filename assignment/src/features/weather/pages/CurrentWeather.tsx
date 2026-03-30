@@ -119,6 +119,7 @@ export default function CurrentWeather() {
               <p>PM10: {air.pm10[0]}</p>
               <p>PM2.5: {air.pm25[0]}</p>
               <p>CO: {air.co[0]}</p>
+              <p>CO2: {air.co2[0]}</p>
               <p>NO2: {air.no2[0]}</p>
               <p>SO2: {air.so2[0]}</p>
             </div>
